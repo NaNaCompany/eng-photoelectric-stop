@@ -1,0 +1,50 @@
+export const tool={
+  "id": "E116",
+  "slug": "eng-photoelectric-stop",
+  "title": "광전효과 정지전압 계산기",
+  "title_en": "Photoelectric Stopping Voltage Calculator",
+  "category": "양자",
+  "category_en": "Quantum",
+  "fields": [
+    {
+      "key": "wavelength",
+      "label": "입사광 진공 파장 λ",
+      "label_en": "Incident vacuum wavelength λ",
+      "dimension": "length",
+      "example": 4e-07,
+      "constraint": "positive",
+      "display_unit": "nm",
+      "display_value": "399.99999999999994"
+    },
+    {
+      "key": "work",
+      "label": "표면 일함수 φ",
+      "label_en": "Surface work function φ",
+      "dimension": "energy",
+      "example": 3.204353268e-19,
+      "constraint": "nonnegative",
+      "display_unit": "J",
+      "display_value": "3.2043532679999998e-19"
+    }
+  ],
+  "result_label": "정지전압의 크기 V_stop",
+  "result_label_en": "Stopping voltage magnitude V_stop",
+  "result_dimension": "voltage",
+  "formula": "V_stop = (hc/λ − φ)/e, when hc/λ ≥ φ",
+  "purpose": "단일 광자 광전효과에서 가장 빠른 광전자를 멈추는 역전압의 크기를 계산한다.",
+  "purpose_en": "Calculate the reverse voltage magnitude needed to stop the fastest photoelectrons in a single-photon model.",
+  "assumptions": "λ>0이며 φ≥0이다. φ는 사용자가 입력한 해당 표면의 일함수다. 단색광·단일 광자 모델이며 다광자·열전자·접촉전위·표면 오염 효과는 제외한다. hc/λ<φ이면 방출 불가를 표시하고 경계에서는 V_stop=0이다. 결과는 역전압의 부호가 아닌 크기이며 광전류나 양자효율을 예측하지 않는다.",
+  "assumptions_en": "Required: λ>0 and φ≥0. Supply the work function of the actual surface. Use monochromatic single-photon excitation. Excluded: multiphoton processes, thermionic emission, contact potentials and surface contamination. Below threshold the app reports no emission; at threshold V_stop=0. The result is a reverse-voltage magnitude and does not predict photocurrent or quantum efficiency.",
+  "sources": [
+    {
+      "label": "OpenStax · Photoelectric effect",
+      "url": "https://openstax.org/books/university-physics-volume-3/pages/6-2-photoelectric-effect"
+    }
+  ],
+  "condition": "",
+  "condition_en": "",
+  "site": "https://nanalab.kr/eng-photoelectric-stop/",
+  "repository": "https://github.com/NaNaCompany/eng-photoelectric-stop",
+  "groups": [],
+  "output_unit": "V"
+};

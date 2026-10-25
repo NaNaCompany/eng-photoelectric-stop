@@ -1,0 +1,48 @@
+{
+  "id": "E116",
+  "value": 1.0996049608300065,
+  "value_70_digits": "1.099604960830006555943818613946906430792449067759903431471464088272305",
+  "method": "Independent Python Decimal (90 working digits, 70-digit report); direct analytical formulas, Decimal square roots/exponentials and argument-reduced Taylor sine. SI decimal spellings are used except explicitly marked exact-binary64 regression fixtures. No JavaScript imports.",
+  "cases": [
+    {
+      "name": "Zero work function converts photon energy to stopping voltage",
+      "values": {
+        "work": 0
+      },
+      "expected": 3.0996049608300065,
+      "expected_70_digits": "3.099604960830006555943818613946906430792449067759903431471464088272305"
+    },
+    {
+      "name": "Long wavelength below threshold has no emitted electron",
+      "values": {
+        "wavelength": 1e-06
+      },
+      "kind": "no-result"
+    },
+    {
+      "name": "Threshold gives exactly zero stopping voltage",
+      "values": {
+        "wavelength": 299792458,
+        "work": 6.62607015e-34
+      },
+      "method": "At one hertz, λ=c metres and φ=h joules give an exact analytical zero. Synthetic boundary fixture rather than a material work function.",
+      "expected": 0.0,
+      "expected_70_digits": "0"
+    },
+    {
+      "name": "Smaller work function raises stopping voltage",
+      "values": {
+        "work": 1.602176634e-19
+      },
+      "expected": 2.0996049608300065,
+      "expected_70_digits": "2.099604960830006555943818613946906430792449067759903431471464088272305"
+    },
+    {
+      "name": "Zero wavelength is rejected",
+      "values": {
+        "wavelength": 0
+      },
+      "throws": true
+    }
+  ]
+}
